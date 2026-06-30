@@ -1,0 +1,18 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+release
+
+# Editor
+.vscode
+.DS_Store
+
+# Installers
+*.dmg
+*.zip
+*.exe
+
+# Logs
+npm-debug.log*
