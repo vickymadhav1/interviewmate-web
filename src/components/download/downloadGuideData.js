@@ -6,7 +6,6 @@ import {
   MonitorCheck,
   PlayCircle,
   ShieldAlert,
-  ShieldCheck,
   Terminal,
 } from "lucide-react";
 
@@ -20,25 +19,22 @@ export const downloadLinks = {
 export const downloadGuides = {
   macos: {
     platform: "macOS",
-    title: "Download Interview Mate AI for macOS",
+    title: "",
     subtitle: "Before downloading, please read these quick installation steps.",
     primaryLabel: "Download for macOS",
     downloadUrl: downloadLinks.macos,
     steps: [],
     note: {
-      icon: ShieldCheck,
-      title: "macOS Security Notice",
-      body: [
-        "Interview Mate AI is currently distributed as a beta application.",
-        "macOS may ask you to confirm before opening it.",
-        "This is expected and only needs to be done once.",
-      ],
+      icon: "",
+      title: "",
+      body: [],
     },
     advancedFix: {
       eyebrow: "Having trouble opening the app?",
       title: "Advanced Fix (only if needed)",
       defaultOpen: true,
       icon: Terminal,
+      videoSrc: "",
       explanation: [
         'If the application still shows "Interview Mate AI is damaged and can\'t be opened" or "Apple could not verify Interview Mate AI", use this fix.',
         "Some versions of macOS add a quarantine attribute to applications downloaded from the internet.",

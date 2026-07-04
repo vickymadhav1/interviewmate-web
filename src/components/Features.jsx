@@ -3,7 +3,6 @@ import {
   BrainCircuit,
   Code2,
   Zap,
-  ShieldCheck,
   Rocket,
 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -40,14 +39,6 @@ const features = [
       "Stay focused while InterviewMate AI works silently in the background.",
     color: "text-yellow-400",
     glow: "hover:shadow-yellow-500/20",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Privacy First",
-    description:
-      "Your interview data stays on your device. We never store conversations.",
-    color: "text-pink-400",
-    glow: "hover:shadow-pink-500/20",
   },
   {
     icon: Rocket,
