@@ -15,7 +15,7 @@ export default function Hero({ onDownloadClick }) {
 
       </div>
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
+      <div className="relative mx-auto grid max-w-7xl items-center justify-items-center gap-16 px-5 sm:px-6 lg:grid-cols-2 lg:justify-items-stretch">
 
         <HeroLeft onDownloadClick={onDownloadClick} />
 

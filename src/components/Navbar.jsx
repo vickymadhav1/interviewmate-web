@@ -8,7 +8,7 @@ export default function Navbar() {
       transition={{ duration: 0.5 }}
       className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#070B16]/70 backdrop-blur-xl"
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-center px-6 md:justify-between">
 
         {/* Logo */}
 

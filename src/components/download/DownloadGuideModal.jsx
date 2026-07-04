@@ -120,7 +120,7 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4 py-6 backdrop-blur-md"
+          className="fixed inset-0 z-[100] flex items-end justify-center bg-black/70 px-0 py-0 backdrop-blur-md sm:items-center sm:px-4 sm:py-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -133,7 +133,7 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
             aria-modal="true"
             aria-labelledby="download-guide-title"
             aria-describedby="download-guide-subtitle"
-            className="relative flex max-h-[92vh] w-full max-w-6xl flex-col overflow-hidden rounded-3xl border border-white/10 bg-[#0B1020] shadow-[0_32px_120px_rgba(109,93,251,.35)]"
+            className="relative flex max-h-[100dvh] w-full max-w-6xl flex-col overflow-hidden rounded-t-3xl border border-white/10 bg-[#0B1020] shadow-[0_32px_120px_rgba(109,93,251,.35)] sm:max-h-[92vh] sm:rounded-3xl"
             initial={{ opacity: 0, y: 28, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 18, scale: 0.98 }}
@@ -142,17 +142,17 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
           >
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-violet-500 via-sky-400 to-emerald-400" />
 
-            <div className="flex items-start justify-between gap-5 border-b border-white/10 px-5 py-5 sm:px-7">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-violet-300">
+            <div className="flex items-start justify-between gap-4 border-b border-white/10 px-4 py-4 sm:gap-5 sm:px-7 sm:py-5">
+              <div className="min-w-0">
+                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-violet-300 sm:text-xs sm:tracking-[0.32em]">
                   {guide.platform} setup
                 </p>
-                {/* <h2
+                <h2
                   id="download-guide-title"
-                  className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl"
+                  className="mt-2 text-xl font-bold leading-tight tracking-tight text-white sm:mt-3 sm:text-3xl"
                 >
                   {guide.title}
-                </h2> */}
+                </h2>
                 <p
                   id="download-guide-subtitle"
                   className="mt-2 text-sm leading-6 text-slate-400 sm:text-base"
@@ -166,28 +166,28 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
                 type="button"
                 aria-label="Close download guide"
                 onClick={onClose}
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
+                className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition hover:bg-white/10 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
               >
                 <X className="h-5 w-5" />
               </button>
             </div>
 
-            <div className="overflow-y-auto px-5 py-6 sm:px-7">
-              <div className="grid gap-4">
+            <div className="overflow-y-auto overscroll-contain px-4 py-4 sm:px-7 sm:py-6">
+              <div className="grid gap-3 sm:gap-4">
                 {guide.steps.map((step, index) => {
                   const StepIcon = step.icon;
 
                   return (
                     <motion.div
                       key={`${guide.platform}-${step.title}`}
-                      className="grid grid-cols-[auto_1fr] gap-4 rounded-2xl border border-white/10 bg-white/[0.035] p-4"
+                      className="grid grid-cols-[auto_1fr] gap-3 rounded-2xl border border-white/10 bg-white/[0.035] p-3 sm:gap-4 sm:p-4"
                       initial={{ opacity: 0, x: -12 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.045 }}
                     >
                       <div className="relative">
                         <motion.div
-                          className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-sky-500 text-sm font-bold text-white shadow-lg shadow-violet-500/25"
+                          className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-sky-500 text-sm font-bold text-white shadow-lg shadow-violet-500/25 sm:h-11 sm:w-11"
                           initial={{ scale: 0.72, rotate: -8 }}
                           animate={{ scale: 1, rotate: 0 }}
                           transition={{
@@ -210,7 +210,7 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
                         </div>
 
                         {step.details && (
-                          <ul className="mt-3 space-y-2 pl-8 text-sm text-slate-400">
+                          <ul className="mt-3 space-y-2 pl-6 text-sm text-slate-400 sm:pl-8">
                             {step.details.map((detail) => (
                               <li key={detail}>{detail}</li>
                             ))}
@@ -218,7 +218,7 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
                         )}
 
                         {step.checks && (
-                          <div className="mt-3 grid gap-2 pl-8 text-sm text-slate-300">
+                          <div className="mt-3 grid gap-2 pl-6 text-sm text-slate-300 sm:pl-8">
                             {step.checks.map((check) => (
                               <div key={check} className="flex items-center gap-2">
                                 <Check className="h-4 w-4 text-emerald-400" />
@@ -233,7 +233,7 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
                 })}
               </div>
 
-              <div className="mt-5 rounded-2xl border border-violet-400/20 bg-violet-500/10 p-5">
+              <div className="mt-4 rounded-2xl border border-violet-400/20 bg-violet-500/10 p-4 sm:mt-5 sm:p-5">
                 <div className="flex items-start gap-3">
                   <NoteIcon className="mt-1 h-5 w-5 shrink-0 text-violet-300" />
                   <div>
@@ -248,12 +248,12 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
               </div>
 
               {guide.advancedFix && (
-                <div className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03]">
+                <div className="mt-4 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] sm:mt-5">
                   <button
                     type="button"
                     aria-expanded={isAdvancedOpen}
                     onClick={() => setIsAdvancedOpen((current) => !current)}
-                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left transition hover:bg-white/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
+                    className="flex w-full cursor-pointer items-center justify-between gap-4 px-4 py-4 text-left transition hover:bg-white/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400 sm:px-5"
                   >
                     <div>
                       <p className="text-sm font-semibold text-white">
@@ -278,7 +278,7 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.2 }}
                       >
-                        <div className="border-t border-white/10 px-5 py-5">
+                        <div className="border-t border-white/10 px-4 py-4 sm:px-5 sm:py-5">
                           <div className="flex items-start gap-3">
                             <guide.advancedFix.icon className="mt-1 h-5 w-5 shrink-0 text-sky-300" />
                             <div className="space-y-3 text-sm leading-6 text-slate-300">
@@ -289,7 +289,7 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
                           </div>
 
                           <div className="mt-4 overflow-hidden rounded-2xl border border-white/10 bg-[#050914]">
-                            <div className="flex items-center justify-between gap-3 border-b border-white/10 px-4 py-3">
+                            <div className="flex items-center justify-between gap-3 border-b border-white/10 px-3 py-3 sm:px-4">
                               <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
                                 <guide.advancedFix.icon className="h-4 w-4" />
                                 Terminal
@@ -297,7 +297,7 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
                               <button
                                 type="button"
                                 onClick={handleCopyCommand}
-                                className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs font-medium text-slate-200 transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
+                                className="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-xs font-medium text-slate-200 transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-400"
                               >
                                 {hasCopied ? (
                                   <Check className="h-4 w-4 text-emerald-400" />
@@ -307,7 +307,7 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
                                 {hasCopied ? "Copied" : "Copy"}
                               </button>
                             </div>
-                            <pre className="overflow-x-auto px-4 py-4 text-sm leading-6 text-sky-100">
+                            <pre className="max-w-full overflow-x-auto px-3 py-4 text-xs leading-6 text-sky-100 sm:px-4 sm:text-sm">
                               <code>{guide.advancedFix.command}</code>
                             </pre>
                           </div>
@@ -318,27 +318,6 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
                             </p>
                           )}
 
-                          {/* <div className="mt-4 rounded-2xl border border-emerald-400/20 bg-emerald-500/10 p-4">
-                            <p className="text-sm font-semibold text-emerald-200">
-                              After running the command:
-                            </p>
-                            <ol className="mt-3 space-y-2 pl-5 text-sm leading-6 text-slate-300">
-                              {guide.advancedFix.afterSteps.map((step) => (
-                                <li key={step} className="list-decimal">
-                                  {step}
-                                </li>
-                              ))}
-                            </ol>
-                          </div> */}
-
-                          {/* <div className="mt-4 rounded-2xl border border-amber-300/20 bg-amber-400/10 p-4">
-                            <div className="flex items-start gap-3">
-                              <Info className="mt-1 h-4 w-4 shrink-0 text-amber-200" />
-                              <p className="text-sm leading-6 text-amber-50/90">
-                                {guide.advancedFix.notice}
-                              </p>
-                            </div>
-                          </div> */}
                         </div>
                       </motion.div>
                     )}
@@ -363,12 +342,12 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
               )}
             </div>
 
-            <div className="flex flex-col-reverse gap-3 border-t border-white/10 bg-[#090E1B] px-5 py-5 sm:flex-row sm:justify-end sm:px-7">
+            <div className="flex flex-col-reverse gap-3 border-t border-white/10 bg-[#090E1B] px-4 py-4 sm:flex-row sm:justify-end sm:px-7 sm:py-5">
               <Button
                 type="button"
                 variant="outline"
                 onClick={onClose}
-                className="rounded-xl border-white/10 bg-white/5 px-6 py-6 text-base text-slate-200 hover:bg-white/10"
+                className="w-full rounded-xl border-white/10 bg-white/5 px-6 py-6 text-base text-slate-200 hover:bg-white/10 sm:w-auto"
               >
                 Cancel
               </Button>
@@ -377,7 +356,7 @@ export default function DownloadGuideModal({ platform, isOpen, onClose }) {
                 type="button"
                 onClick={handleDownload}
                 disabled={!canDownload || !guide.downloadUrl || guide.downloadUrl === "#"}
-                className="rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-6 py-6 text-base hover:opacity-90"
+                className="w-full rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-6 py-6 text-base hover:opacity-90 sm:w-auto"
               >
                 {guide.primaryLabel}
               </Button>
