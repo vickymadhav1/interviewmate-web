@@ -1,7 +1,7 @@
 import HeroLeft from "./HeroLeft";
 import HeroRight from "./HeroRight";
 
-export default function Hero() {
+export default function Hero({ onDownloadClick }) {
   return (
     <section className="relative overflow-hidden pt-32 pb-20">
 
@@ -17,7 +17,7 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
 
-        <HeroLeft />
+        <HeroLeft onDownloadClick={onDownloadClick} />
 
         <HeroRight />
 

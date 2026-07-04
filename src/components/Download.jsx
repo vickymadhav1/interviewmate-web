@@ -6,7 +6,13 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export default function Download() {
+export default function Download({ onDownloadClick }) {
+  const handleDownloadClick = (event, platform) => {
+    event.preventDefault();
+    event.stopPropagation();
+    onDownloadClick(platform);
+  };
+
   return (
     <section
       id="download"
@@ -45,7 +51,9 @@ export default function Download() {
 
           <div className="mt-12 flex flex-wrap justify-center gap-5">
             <Button
+              type="button"
               size="lg"
+              onClick={(event) => handleDownloadClick(event, "windows")}
               className="rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-8 py-7 text-base hover:opacity-90"
             >
               <DownloadIcon className="mr-2 h-5 w-5" />
@@ -53,20 +61,15 @@ export default function Download() {
             </Button>
 
             <Button
-  asChild
-  size="lg"
-  variant="outline"
-  className="rounded-xl cursor-pointer border-white/10 bg-white/5 px-8 py-7 text-base hover:bg-white/10"
->
-  <a
-    href="https://github.com/vickymadhav1/fe-AI/releases/download/v1.0.0/Interview.Mate.AI-1.0.0-arm64.dmg"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Apple className="mr-2 h-5 w-5" />
-    Download for macOS
-  </a>
-</Button>
+              type="button"
+              size="lg"
+              variant="outline"
+              onClick={(event) => handleDownloadClick(event, "macos")}
+              className="cursor-pointer rounded-xl border-white/10 bg-white/5 px-8 py-7 text-base hover:bg-white/10"
+            >
+              <Apple className="mr-2 h-5 w-5" />
+              Download for macOS
+            </Button>
           </div>
 
           <div className="mt-10 flex flex-wrap justify-center gap-8 text-sm text-slate-400">

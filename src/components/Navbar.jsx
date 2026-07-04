@@ -1,5 +1,3 @@
-import { Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 export default function Navbar() {
@@ -60,15 +58,6 @@ export default function Navbar() {
           </a>
 
         </nav>
-
-        {/* Download */}
-
-        <Button
-          className="rounded-xl bg-gradient-to-r from-violet-600 to-blue-500 px-6 py-6 hover:opacity-90"
-        >
-          <Download className="mr-2 h-4 w-4" />
-          Download Now
-        </Button>
 
       </div>
     </motion.header>

@@ -5,14 +5,15 @@ import {
   Download,
   Apple,
   Sparkles,
-  Shield,
-  Eye,
-  Brain,
 } from "lucide-react";
 
-import FeaturePill from "./FeaturePill";
+export default function HeroLeft({ onDownloadClick }) {
+  const handleDownloadClick = (event, platform) => {
+    event.preventDefault();
+    event.stopPropagation();
+    onDownloadClick(platform);
+  };
 
-export default function HeroLeft() {
   return (
     <motion.div
       initial={{ opacity: 0, x: -40 }}
@@ -47,28 +48,25 @@ export default function HeroLeft() {
       <div className="flex flex-wrap gap-4">
 
         <Button
+          type="button"
           size="lg"
+          onClick={(event) => handleDownloadClick(event, "windows")}
           className="rounded-xl bg-linear-to-r from-violet-600 to-blue-500 px-8 py-7"
         >
           <Download className="mr-2 h-5 w-5" />
           Download Windows
         </Button>
 
-    <Button
-  asChild
-  size="lg"
-  variant="outline"
-  className="rounded-xl cursor-pointer border-white/10 bg-white/5 px-8 py-7 text-base hover:bg-white/10"
->
-  <a
-    href="https://github.com/vickymadhav1/fe-AI/releases/download/v1.0.0/InterviewMateAI-macOS-1.0.0.dmg"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Apple className="mr-2 h-5 w-5" />
-    Download macOS
-  </a>
-</Button>
+        <Button
+          type="button"
+          size="lg"
+          variant="outline"
+          onClick={(event) => handleDownloadClick(event, "macos")}
+          className="cursor-pointer rounded-xl border-white/10 bg-white/5 px-8 py-7 text-base hover:bg-white/10"
+        >
+          <Apple className="mr-2 h-5 w-5" />
+          Download macOS
+        </Button>
 
 
       </div>
