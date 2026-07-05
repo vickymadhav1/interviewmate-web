@@ -164,7 +164,7 @@ export default function WindowsInstallDrawer({ guide, isOpen, onClose }) {
                 Download for Windows
               </motion.button>
 
-              <motion.button
+              {/* <motion.button
                 type="button"
                 onClick={onClose}
                 whileHover={{ y: -1 }}
@@ -173,7 +173,7 @@ export default function WindowsInstallDrawer({ guide, isOpen, onClose }) {
                 className="h-14 w-full cursor-pointer rounded-[20px] border border-white/[0.06] bg-[#18181B] px-6 text-base font-semibold text-[#FAFAFA] transition hover:bg-white/[0.08] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090B] sm:w-auto"
               >
                 Got it
-              </motion.button>
+              </motion.button> */}
             </div>
           </motion.aside>
         </motion.div>

@@ -88,7 +88,7 @@ export default function MacInstallDrawer({ isOpen, downloadUrl, onClose }) {
               mass: 0.9,
             }}
             onMouseDown={(event) => event.stopPropagation()}
-            className="ml-auto flex h-[100dvh] w-full max-w-[560px] flex-col overflow-hidden border-l border-white/[0.06] bg-[#09090B] px-6 py-7 text-[#FAFAFA] shadow-[-36px_0_120px_rgba(0,0,0,.45)] sm:px-8 sm:py-8"
+            className="ml-auto flex h-[100dvh] w-full max-w-[900px] flex-col overflow-hidden border-l border-white/[0.06] bg-[#09090B] px-6 py-7 text-[#FAFAFA] shadow-[-36px_0_120px_rgba(0,0,0,.45)] sm:px-8 sm:py-8"
           >
             <div className="mb-6 flex shrink-0 items-start justify-between gap-5">
               <div className="min-w-0">
@@ -98,13 +98,6 @@ export default function MacInstallDrawer({ isOpen, downloadUrl, onClose }) {
                 >
                   Can't open Interview Mate AI?
                 </h2>
-                <p
-                  id="mac-install-subtitle"
-                  className="mt-3 max-w-[28rem] text-base font-medium leading-7 text-[#A1A1AA]"
-                >
-                  If macOS displays a security warning, this guide will get you
-                  running in under 2 minutes.
-                </p>
               </div>
 
               <button
@@ -143,7 +136,7 @@ export default function MacInstallDrawer({ isOpen, downloadUrl, onClose }) {
                 Download for macOS
               </motion.button>
 
-              <motion.button
+              {/* <motion.button
                 type="button"
                 onClick={onClose}
                 whileHover={{ y: -1 }}
@@ -152,7 +145,7 @@ export default function MacInstallDrawer({ isOpen, downloadUrl, onClose }) {
                 className="h-14 w-full cursor-pointer rounded-[20px] border border-white/[0.06] bg-[#18181B] px-6 text-base font-semibold text-[#FAFAFA] transition hover:bg-white/[0.08] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#38BDF8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090B] sm:w-auto"
               >
                 Got it
-              </motion.button>
+              </motion.button> */}
             </div>
           </motion.aside>
         </motion.div>
