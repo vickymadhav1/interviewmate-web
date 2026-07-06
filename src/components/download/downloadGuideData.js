@@ -1,13 +1,4 @@
-import {
-  AlertTriangle,
-  CheckCircle2,
-  Download,
-  Mic,
-  MonitorCheck,
-  PlayCircle,
-  ShieldAlert,
-  Terminal,
-} from "lucide-react";
+import { Terminal } from "lucide-react";
 
 export const downloadLinks = {
   macos:
@@ -53,43 +44,37 @@ export const downloadGuides = {
   windows: {
     platform: "Windows",
     title: "Download Interview Mate AI for Windows",
-    subtitle: "Installation only takes a minute.",
+    subtitle: "Installation takes about 1 minute.",
     primaryLabel: "Download for Windows",
     downloadUrl: downloadLinks.windows,
     steps: [
       {
-        icon: Download,
-        title: "Download the Windows installer (.exe).",
+        title: "Download the Interview Mate AI Windows installer (.exe).",
       },
       {
-        icon: PlayCircle,
-        title: "Run the installer.",
+        title: "Open the downloaded installer.",
       },
       {
-        icon: AlertTriangle,
-        title: "If Windows SmartScreen appears, click More info, then Run anyway.",
+        title:
+          "If Windows Defender SmartScreen appears, click 'More info', then click 'Run anyway'.",
       },
       {
-        icon: CheckCircle2,
-        title: "Complete installation.",
+        title: "Follow the installation wizard to complete the installation.",
       },
       {
-        icon: MonitorCheck,
         title: "Launch Interview Mate AI.",
       },
       {
-        icon: Mic,
-        title: "Grant microphone and screen permissions if prompted.",
+        title: "Grant Microphone and Screen Recording permissions if prompted.",
       },
     ],
     note: {
-      icon: ShieldAlert,
-      title: "Windows Security Notice",
-      body: [
-        "Windows Defender may show a warning because the application is not yet code signed.",
-        "This is expected during beta.",
-      ],
+      title: "Beta Application Notice",
+      description:
+        "Interview Mate AI is currently distributed as a beta application. Windows Defender SmartScreen may display a warning because the app has not yet established Microsoft reputation. This is expected and does not indicate that the application is unsafe.",
     },
+    highlight:
+      'If SmartScreen appears, simply click "More info" -> "Run anyway" to continue.',
     metadata: [],
   },
 };
