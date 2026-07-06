@@ -12,8 +12,7 @@ import {
 export const downloadLinks = {
   macos:
     "https://github.com/vickymadhav1/fe-AI/releases/download/v1.0.0/InterviewMateAI-macOS-1.0.0.dmg",
-  windows:
-    "https://github.com/vickymadhav1/fe-AI/releases/download/v1.0.0/InterviewMateAI-Windows-Portable-1.0.0.exe",
+  windows: "/InterviewMateAI-Windows-Portable-1.0.0.exe",
 };
 
 export const downloadGuides = {

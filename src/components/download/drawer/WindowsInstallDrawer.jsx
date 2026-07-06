@@ -57,7 +57,12 @@ export default function WindowsInstallDrawer({ guide, isOpen, onClose }) {
       return;
     }
 
-    window.location.href = guide.downloadUrl;
+    const link = document.createElement("a");
+    link.href = guide.downloadUrl;
+    link.download = "InterviewMateAI-Windows-Portable-1.0.0.exe";
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
   };
 
   return (
