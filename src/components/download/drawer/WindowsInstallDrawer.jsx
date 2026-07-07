@@ -59,7 +59,7 @@ export default function WindowsInstallDrawer({ guide, isOpen, onClose }) {
 
     const link = document.createElement("a");
     link.href = guide.downloadUrl;
-    link.download = "InterviewMateAI-Windows-Portable-1.0.0.exe";
+    link.download = "InterviewMateAI-Win-1.0.0.exe";
     document.body.appendChild(link);
     link.click();
     link.remove();
@@ -125,7 +125,7 @@ export default function WindowsInstallDrawer({ guide, isOpen, onClose }) {
               </div>
             </div>
 
-            <div className="min-h-0 flex-1 overflow-y-auto px-5 pb-5 sm:px-8">
+            <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-5 pb-5 [scrollbar-color:rgba(56,189,248,.55)_transparent] [scrollbar-gutter:stable] [scrollbar-width:thin] sm:px-8">
               <ol className="space-y-4">
                 {guide.steps.map((step, index) => (
                   <motion.li

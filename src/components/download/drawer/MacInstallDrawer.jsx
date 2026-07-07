@@ -111,7 +111,7 @@ export default function MacInstallDrawer({ isOpen, downloadUrl, onClose }) {
               </button>
             </div>
 
-            <div className="flex min-h-0 flex-1 flex-col gap-5">
+            <div className="flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto overscroll-contain pr-1 [scrollbar-color:rgba(56,189,248,.55)_transparent] [scrollbar-gutter:stable] [scrollbar-width:thin]">
               <InstallVideo isOpen={isOpen} />
               <TerminalCommand />
 

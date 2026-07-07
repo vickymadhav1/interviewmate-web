@@ -13,7 +13,7 @@ release
 *.dmg
 *.zip
 *.exe
-!public/InterviewMateAI-Windows-Portable-1.0.0.exe
+!public/InterviewMateAI-Win-1.0.0.exe
 
 # Logs
 npm-debug.log*

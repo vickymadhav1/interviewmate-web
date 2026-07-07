@@ -2,8 +2,8 @@ import { Terminal } from "lucide-react";
 
 export const downloadLinks = {
   macos:
-    "https://github.com/vickymadhav1/fe-AI/releases/download/v1.0.0/InterviewMateAI-macOS-1.0.0.dmg",
-  windows: "/InterviewMateAI-Windows-Portable-1.0.0.exe",
+    "https://github.com/vickymadhav1/fe-AI/releases/download/v1.0.0/InterviewMateAI-mac-1.0.0.dmg",
+  windows: "/InterviewMateAI-Win-1.0.0.exe",
 };
 
 export const downloadGuides = {
