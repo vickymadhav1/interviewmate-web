@@ -59,7 +59,7 @@ export default function WindowsInstallDrawer({ guide, isOpen, onClose }) {
 
     const link = document.createElement("a");
     link.href = guide.downloadUrl;
-    link.download = "InterviewMateAI-Win-1.0.1.exe";
+    link.download = "InterviewMateAI-Win-1.0.0.exe";
     document.body.appendChild(link);
     link.click();
     link.remove();
