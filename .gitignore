@@ -13,6 +13,7 @@ release
 *.dmg
 *.zip
 *.exe
+!public/InterviewMateAI-mac-1.0.1.dmg
 !public/InterviewMateAI-Win-1.0.1.exe
 
 # Logs
